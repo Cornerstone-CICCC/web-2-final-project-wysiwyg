@@ -21,13 +21,13 @@ body {
 }
 
 /* ----------GLOBAL TEXT CLASSES---------- */
-.xl {
+.text-xl {
   font-weight: 700;
   font-size: 3.5rem;
   line-height: 4.2rem;
 }
 
-.l {
+.text-l {
   font-weight: 700;
   font-size: 3rem;
   line-height: 3.6rem;
@@ -50,13 +50,13 @@ body {
   padding: 12px 24px;
 }
 
-.m {
+.text-m {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.s {
+.text-s {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.68rem;
