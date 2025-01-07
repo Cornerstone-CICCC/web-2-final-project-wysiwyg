@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Container from "./Container.astro";
 import logo from "../assets/ddsgnr_logo.svg";
-import Social from "./Social.astro";
+// import Social from "./Social.astro";
 import "../styles/global.css";
 
 const currentYear = new Date().getFullYear();
@@ -24,7 +24,8 @@ const currentYear = new Date().getFullYear();
         </ul>
       </nav>
       <div class="footer-social">
-        <Social />
+        <!-- <Social dribbble={false} /> -->
+        Icons
       </div>
     </div>
     <hr class="footer-hr" />
@@ -99,5 +100,39 @@ const currentYear = new Date().getFullYear();
 
   .footer-copyright ul li a:where(:focus, :active, :hover) {
     color: #10f2c5;
+  }
+
+  @media screen and (min-width: 768px) {
+    .footer-wrapper {
+      display: grid;
+      justify-content: space-between;
+      align-items: center;
+      grid-template-columns: 250px 1fr 250px;
+    }
+
+    .footer-wrapper > * {
+      padding: 0 1rem;
+    }
+
+    .footer-nav ul {
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .footer-copyright {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-copyright ul {
+      margin-top: 0;
+    }
   }
 </style>
