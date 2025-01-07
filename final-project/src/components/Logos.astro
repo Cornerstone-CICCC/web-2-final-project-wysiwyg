@@ -1,5 +1,54 @@
+---
+import logo1 from "../assets/img/logo1.png"
+import logo2 from "../assets/img/logo2.png"
+import logo3 from "../assets/img/logo3.png"
+import logo4 from "../assets/img/logo4.png"
+import logo5 from "../assets/img/logo5.png"
+import logo6 from "../assets/img/logo6.png"
+import logo7 from "../assets/img/logo7.png"
+---
 <section>
     <p>We work on</p>
     <h2>All Makes & Models</h2>
-    <img src="../assets/img/logo1.png" alt="">
+    <div class="brands">
+        <img src={logo1.src} alt="">
+        <img src={logo2.src} alt="">
+        <img src={logo3.src} alt="">
+        <img src={logo4.src} alt="">
+        <img src={logo5.src} alt="">
+        <img src={logo6.src} alt="">
+        <img src={logo7.src} alt="">
+    </div>
+    <div class="brands">
+        <img src={logo1.src} alt="">
+        <img src={logo2.src} alt="">
+        <img src={logo3.src} alt="">
+        <img src={logo4.src} alt="">
+    </div>
 </section>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        padding: 80px 64px;
+    }
+    .brands {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        & img {
+            width: 100px;
+            object-fit: contain;
+        }
+    }
+    
+</style>
