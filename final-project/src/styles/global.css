@@ -16,3 +16,12 @@ body {
   margin: auto;
   max-width: 1312px;
 }
+
+p {
+  margin-top: 0;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
