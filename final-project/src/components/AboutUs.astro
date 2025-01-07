@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets'
+import video from "../assets/img/video.jpg"
+---
+
 <section>
     <div class="about-container">
         <h2>About Us</h2>
@@ -40,7 +45,7 @@
             <a href="#">Learn More &#62;</a>
         </div>
     </div>
-    <img src="https://placehold.co/600x500" alt="" />
+    <Image src={video} alt={"Video Thumbnail"} class="thumbnail" />
 </section>
 
 <style>
@@ -54,7 +59,6 @@
         height: 100vh;
         padding: 0 64px;
         & .about-container {
-            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 32px;
@@ -107,8 +111,9 @@
 
             }
         }
-        & img {
-            flex: 1;
+        & .thumbnail {
+            width: 50%;
+            height: 500px;
         }
     }
 </style>
