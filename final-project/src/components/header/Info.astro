@@ -1,0 +1,43 @@
+<div class="header-info-place">
+    <div class="header-info-place-emergency">For emergency cases: <u>800 123 45 67</u></div>
+    <div class="header-info-place-location">Location: 121 Wallstreet Street, NY , USA</div>
+    <div class="header-info-place-hours">Open hours: 9.00-24.00 Mon-Sat</div>
+    <div class="header-info-place-mail">Email: info@Ddsgnr.com</div>
+</div>
+<div class="header-info-socials">
+    socials here
+</div>
+
+<style>
+    .header-info-place {
+        display: flex;
+        text-align: center;
+        font-size: 14px;
+    }
+    .header-info-place div {
+        padding: 0 1rem;
+        border-left: solid 1px black;
+    }
+    .header-info-place div.header-info-place-emergency {
+        font-weight: bold;
+        font-size: 16px;
+        padding-left: 0;
+        border: none;
+    }
+
+    .header-info-socials {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 850px) {
+        .header-info-place {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .header-info-place div {
+            border: none;
+        }
+    }
+
+</style>

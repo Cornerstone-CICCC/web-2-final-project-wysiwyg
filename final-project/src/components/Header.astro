@@ -1,36 +1,27 @@
+---
+import Info from "./header/Info.astro"
+import Logo from "./header/Logo.astro"
+import Menu from "./header/Menu.astro"
+import Hamburger from "./header/Hamburger.astro"
+---
+
 <header>
-  <div class="hamburger-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav>
+  <div class="desktop-menu">
     <div class="header-info">
-        <div class="header-info-place">
-          <div class="header-info-place-emergency">For emergency cases: <u>800 123 45 67</u></div>
-          <div class="header-info-place-location">Location: 121 Wallstreet Street, NY , USA</div>
-          <div class="header-info-place-hours">Open hours: 9.00-24.00 Mon-Sat</div>
-          <div class="header-info-place-mail">Email: info@Ddsgnr.com</div>
-        </div>
-        <div class="header-info-socials">
-            socials here
-        </div>
+      <Info />
+    </div>
+    <div class="header-nav">
+      <div class="header-logo">
+        <Logo />
       </div>
-      <div class="header-menu">
-        <div class="header-menu-logo">
-          <img src="/src/assets/img/page-logo.svg" alt="Ddsgnr Logo">
-        </div>
-        <div class="header-menu-nav">
-            <div class="header-menu-nav-links">
-                <a href="/">Home</a>
-                <a href="/services">Services</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-            </div>
-            <button>Book Your Appointment Now</button>
-        </div>
+        <div class="header-menu">
+        <Menu />
       </div>
-  </nav>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <Hamburger />
+  </div>
 </header>
 
 <style>
@@ -38,52 +29,45 @@
         background-color: #FFFFFF;
         color: #000000;
     }
-    .header-info, .header-menu {
+    .desktop-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .header-info {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: .75rem 4rem;
         border-bottom: solid 1px black;
     }
-
-    .header-info-place {
+    .header-menu {
         display: flex;
-        text-align: center;
-        font-size: 14px;
-    }
-    .header-info-place div {
-        padding: 0 1rem;
-        border-left: solid 1px black;
-    }
-    .header-info-place div.header-info-place-emergency {
-        font-weight: bold;
-        font-size: 16px;
-        padding-left: 0;
-        border: none;
-    }
-
-    .header-menu-nav {
-        display: flex;
-        gap: 2rem;
+        justify-content: space-between;
         align-items: center;
     }
 
-    .header-menu-nav-links {
+    .header-nav {
         display: flex;
-        gap: 2rem;
+        align-items: center;
+        border-bottom: solid 1px black;
+        justify-content: space-between;
+        padding: .75rem 4rem;
+    }
+    .mobile-menu {
+        display: none;
     }
 
-    .header-menu-nav-links a {
-        color: black;
-        text-decoration: none;
-    }
+    @media (max-width: 850px) {
+     .desktop-menu {
+        display: none;
+     }   
 
-    .header-menu-nav button {
-        background-color: black;
-        color: white;
-        padding: .5rem 1.25rem;
-        border-radius: 5px;
-        border: none;
+     .mobile-menu {
+        display: flex;
+        align-items: center;
+        border-bottom: solid 1px black;
+        justify-content: space-between;
+        padding: .75rem 5%;
+     }
     }
-
 </style>
