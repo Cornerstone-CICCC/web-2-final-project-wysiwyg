@@ -3,17 +3,21 @@ import bgImg from "../assets/img/banner.jpg"
 ---
 <section style=`background-image: url(${bgImg.src});`>
     <div class="banner-container">
-        <h2>Expert Car Care You Can Trust</h2>
-        <p>
+        <h2 class="text-xl">Expert Car Care You Can Trust</h2>
+        <p class="text">
             Get Back on the Road Quickly with Ddsgnr, Expert Car Care You Can
             Trust,Expert Car Care You Can TrustExpert Car Care You Can
             TrustExpert Car Care You Can TrustExpert Car Care You Can Trust
         </p>
-        <a href="#">Book Your Appointment Now</a>
+        <a href="#" class="a-btn">Book Your Appointment Now</a>
     </div>
 </section>
 
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
     section {
         display: flex;
         align-items: center;
@@ -28,30 +32,11 @@ import bgImg from "../assets/img/banner.jpg"
         display: flex;
         flex-direction: column;
         gap: 24px;
-        & h2 {
-            margin: 0;
-            padding: 0;
-            font-size: 56px;
-            line-height: 67.2px;
-            font-weight: 700;
-        }
-        & p {
-            margin: 0;
-            padding: 0;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 27px;
-        }
+        
+        
         & a {
-            margin: 0;
-            padding: 0;
             max-width: fit-content;
-            padding: 12px 24px;
             background-color: #ffffff;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            border: 1px solid black;
         }
     }
 </style>
