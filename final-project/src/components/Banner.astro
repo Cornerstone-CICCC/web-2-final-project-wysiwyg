@@ -1,6 +1,7 @@
 ---
-import bgImg from "../assets/img/banner.jpg"
+import bgImg from "../assets/img/banner.jpg";
 ---
+
 <section style=`background-image: url(${bgImg.src});`>
     <div class="banner-container">
         <h2 class="text-xl">Expert Car Care You Can Trust</h2>
@@ -14,29 +15,35 @@ import bgImg from "../assets/img/banner.jpg"
 </section>
 
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
     section {
         display: flex;
         align-items: center;
-        background-image: url();
         background-size: cover;
         color: #ffffff;
         min-height: 100vh;
         padding: 0 64px;
     }
     .banner-container {
+        text-wrap: balance;
         width: 50%;
         display: flex;
         flex-direction: column;
         gap: 24px;
-        
-        
         & a {
             max-width: fit-content;
             background-color: #ffffff;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        section {
+            padding: 0 24px;
+        }
+        .banner-container {
+            width: 100%;
         }
     }
 </style>
