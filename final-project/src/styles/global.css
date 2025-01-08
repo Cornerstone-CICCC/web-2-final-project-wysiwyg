@@ -1,4 +1,5 @@
 @import url("./fonts.css");
+
 html,
 body {
   margin: 0;
@@ -6,13 +7,57 @@ body {
   height: 100%;
   font-family: "Roboto", "Courier New", Courier, monospace;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
 .container {
   padding: 0 1rem;
   margin: auto;
   max-width: 1312px;
+}
+
+/* ----------GLOBAL TEXT CLASSES---------- */
+.text-xl {
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.2rem;
+}
+
+.text-l {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.68rem;
+}
+
+.a-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 12px 24px;
+}
+
+.text-m {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-s {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.68rem;
 }
