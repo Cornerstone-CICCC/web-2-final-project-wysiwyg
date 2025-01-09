@@ -1,0 +1,46 @@
+<div class="our-services">
+    <div class="services-content">
+        <h2 class="services-title text-l">Our Services</h2>
+        <p class="serives-desc text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+    <div class="services-grid"></div>
+    <button class="services-more a-btn">View more</button>
+</div>
+
+<style>
+    h2, p {margin: 0;}
+    .our-services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        background-color: #F7F7F7;
+        padding: 3rem 1.5rem;
+    }
+
+    .services-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .services-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .services-grid img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    button {
+        width: 100%;
+        background-color: transparent;
+        transition: .3s ease-in-out;
+    }
+    button:hover {
+        background-color: rgb(200, 200, 200);
+    }
+</style>
