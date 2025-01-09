@@ -3,7 +3,14 @@
         <h2 class="services-title text-l">Our Services</h2>
         <p class="serives-desc text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
-    <div class="services-grid"></div>
+    <div class="services-images">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <img src="/src/assets/services/wheel.png" alt="wheel">
+    </div>
     <button class="services-more a-btn">View more</button>
 </div>
 
@@ -24,23 +31,56 @@
         gap: 1.5rem;
     }
 
-    .services-grid {
-        display: grid;
+    .services-images {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
+        justify-items: center;
     }
 
-    .services-grid img {
+    .services-images img {
         width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
+        max-width: 362px;
+        border-radius: 5px;
     }
 
     button {
         width: 100%;
         background-color: transparent;
-        transition: .3s ease-in-out;
+        transition: .15s ease-in-out;
     }
     button:hover {
         background-color: rgb(200, 200, 200);
+    }
+    
+    @media (min-width: 680px) {
+        .services-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .our-services {
+            padding: 7rem 4rem;
+        }
+
+        .services-content {
+            text-align: center;
+        }
+
+        button {
+            display: none;
+        }
+
+    }
+
+    @media (min-width: 1000px) {
+        .services-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 2rem;
+            row-gap: 5rem;
+        }
     }
 </style>
