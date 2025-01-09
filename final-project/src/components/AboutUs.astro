@@ -46,35 +46,58 @@ import video from "../assets/img/video.jpg";
         </div>
     </div>
     <Image src={video} alt={"Video Thumbnail"} class="thumbnail" />
+    <dialog>
+        <button autofocus>Close</button>
+        <p>This modal dialog has a groovy backdrop!</p>
+    </dialog>
 </section>
+
+<script>
+    const dialog = document.querySelector("dialog");
+    const showButton = document.querySelector(".thumbnail");
+    const closeButton = document.querySelector("dialog button");
+
+    showButton.addEventListener("click", () => {
+        dialog.showModal();
+    });
+
+    closeButton.addEventListener("click", () => {
+        dialog.close();
+    });
+</script>
 
 <style>
     * {
         margin: 0;
         padding: 0;
     }
+    
     section {
         display: flex;
         align-items: center;
         height: 100vh;
         padding: 0 64px;
     }
+
     .about-container {
         display: flex;
         flex-direction: column;
         gap: 32px;
     }
+
     .about-container h2 {
         font-size: 48px;
         font-weight: 700;
         line-height: 57.6px;
     }
+
     .about-content {
         list-style-type: none;
         display: flex;
         flex-wrap: wrap;
         gap: 24px;
     }
+
     .about-content li {
         display: flex;
         flex-direction: column;
@@ -92,6 +115,7 @@ import video from "../assets/img/video.jpg";
             text-wrap: balance;
         }
     }
+
     .about-links {
         display: flex;
         align-items: center;
@@ -112,10 +136,49 @@ import video from "../assets/img/video.jpg";
             border: none;
         }
     }
+
     .thumbnail {
         width: 50%;
         height: 500px;
     }
+
+    dialog {
+        width: 60%;
+        max-width: 600px;
+        aspect-ratio: 16 / 9;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        padding: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+    }
+
+    dialog::backdrop {
+        background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+        ); 
+    }
+
+    .close-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+        z-index: 10;
+    }
+
     @media only screen and (max-width: 768px) {
         section {
             flex-direction: column;
