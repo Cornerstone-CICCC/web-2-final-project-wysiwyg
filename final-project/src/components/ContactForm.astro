@@ -1,0 +1,425 @@
+---
+import CarImg from "../assets/img/contact_form_img.png";
+---
+
+<div class="contact-form-container">
+  <div class="contact-form-section">
+    <div class="tagline">Tagline</div>
+    <h2 class="title">Contact Us</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <form
+      id="contact-form"
+      class="contact-form"
+      method="POST"
+    >
+      <div class="form-item-container">
+        <div class="form-item">
+          <p class="label">First name</p>
+          <input type="text" id="first-name" class="form-input" />
+          <div id="error-first-name" class="error-message"></div>
+        </div>
+        <div class="form-item">
+          <p class="label">Last name</p>
+          <input type="text" id="last-name" class="form-input" />
+          <div id="error-last-name" class="error-message"></div>
+        </div>
+        <div class="form-item">
+          <p class="label">Phone number</p>
+          <input type="text" id="phone-number" class="form-input" />
+          <div id="error-phone-number" class="error-message"></div>
+        </div>
+        <div class="form-item">
+          <p class="label">Email</p>
+          <input type="text" id="email" class="form-input" />
+          <div id="error-email" class="error-message"></div>
+        </div>
+        <div class="form-item">
+          <p class="label">Select service</p>
+          <select name="service" id="service" class="form-input">
+            <option value="" selected disabled></option>
+            <option value="car_maintenance">Car maintenance</option>
+            <option value="car_fixing">Car fixing</option>
+            <option value="consulting">Consulting</option>
+            <option value="other">Other</option>
+          </select>
+          <div id="error-service" class="error-message"></div>
+        </div>
+        <div class="form-item">
+          <p class="label">Appointment date</p>
+          <input
+            type="date"
+            id="appointment-date"
+            class="form-input"
+            placeholder="YYYY-MM-DD"
+          />
+          <div id="error-appointment-date" class="error-message"></div>
+        </div>
+      </div>
+      <div class="form-text">
+        <p class="label">Message</p>
+        <textarea
+          id="message"
+          class="message"
+          name="message"
+          rows="5"
+          cols="33"
+          placeholder="Type your message..."></textarea>
+        <div id="error-message" class="error-message"></div>
+      </div>
+      <div class="form-agreement">
+        <input type="checkbox" id="agreement" name="agreement" />
+        <p class="agreement">I accept the Terms</p>
+      </div>
+      <div id="error-agreement" class="error-message"></div>
+      <div class="form-item">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="contact-form-img">
+    <img src={CarImg.src} alt="" />
+  </div>
+</div>
+
+<style>
+  .contact-form-container {
+    padding: 100px 0;
+    display: flex;
+    height: 1062px;
+    background-color: #f0f0f0;
+  }
+
+  .contact-form-section {
+    margin: 0 30px;
+    flex-grow: 1;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .title {
+    margin: 20px 0;
+    font-size: 48px;
+  }
+
+  .form-input {
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    border: solid 1px;
+  }
+
+  .error-box {
+    border: 2px solid red;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .form-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .form-item {
+    flex: 1 1 calc(50% - 8px);
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  #service {
+    position: relative;
+  }
+
+  .form-text {
+    margin-top: 20px;
+  }
+
+  .message {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+  }
+
+  .label {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .form-agreement {
+    display: flex;
+  }
+
+  .agreement {
+    margin-left: 6px;
+  }
+
+  .submit-button {
+    width: 99px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  .submit-button:hover {
+    background-color: #303030;
+  }
+
+  .contact-form-img {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .contact-form-img img {
+    height: 838px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-container {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .title {
+      font-size: 32px;
+    }
+
+    .tagline {
+      display: none;
+    }
+
+    .contact-form-img {
+      display: none;
+    }
+
+    .form-item {
+      flex: 1 1 100%;
+    }
+
+    .submit-button {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  import emailjs from "emailjs-com";
+  import { Notyf } from "notyf";
+  import "notyf/notyf.min.css";
+
+  // email sending success or fail notification
+  const notyf = new Notyf({
+    position: {
+      x: "center",
+      y: "top",
+    },
+  });
+
+  interface FormData {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    email: string;
+    service: string;
+    appointmentDate: string;
+    message: string;
+    agreement: boolean;
+  }
+
+  const EMAIL = {
+    PUBLIC_KEY: "Pje4_CaDdmEL3bbnu",
+    SERVICE_ID: "service_a7x8nl7",
+    TEMPLATE_ID: "template_p00wd35",
+  };
+
+  emailjs.init(EMAIL.PUBLIC_KEY);
+
+  const contactForm = document.querySelector("#contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let hasError = false;
+
+      // first name validation
+      const firstName = document.querySelector("#first-name") as HTMLInputElement;
+      const errorFirstName = document.querySelector("#error-first-name");
+      if (firstName && errorFirstName) {
+        if (firstName.value === "") {
+          errorFirstName.textContent = "Please input first name.";
+          firstName.classList.add("error-box");
+          hasError = true;
+        } else if (firstName.value.length > 20) {
+          errorFirstName.textContent = "First name must be less than 20 characters.";
+          firstName.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorFirstName.textContent = "";
+          firstName.classList.remove("error-box");
+        }
+      }
+
+      // last name validation
+      const lastName = document.querySelector("#last-name") as HTMLInputElement;
+      const errorLastName = document.querySelector("#error-last-name");
+      if (lastName && errorLastName) {
+        if (lastName.value === "") {
+          errorLastName.textContent = "Please input last name.";
+          lastName.classList.add("error-box");
+          hasError = true;
+        } else if (lastName.value.length > 20) {
+          errorLastName.textContent = "Last name must be less than 20 characters.";
+          lastName.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorLastName.textContent = "";
+          lastName.classList.remove("error-box");
+        }
+      }
+
+      // phone number validation
+      const phoneNumber = document.querySelector("#phone-number") as HTMLInputElement;
+      const errorPhoneNumber = document.querySelector("#error-phone-number");
+      if (phoneNumber && errorPhoneNumber) {
+        if (phoneNumber.value === "") {
+          errorPhoneNumber.textContent = "Please input phone number.";
+          phoneNumber.classList.add("error-box");
+          hasError = true;
+        } else if (!/^\d+$/.test(phoneNumber.value)) {
+          errorPhoneNumber.textContent = "Phone number must contain only digits.";
+          phoneNumber.classList.add("error-box");
+          hasError = true;
+        } else if (
+          phoneNumber.value.length !== 10 &&
+          phoneNumber.value.length !== 11
+        ) {
+          errorPhoneNumber.textContent = "Phone number must be 10 or 11 digits.";
+          phoneNumber.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorPhoneNumber.textContent = "";
+          phoneNumber.classList.remove("error-box");
+        }
+      }
+
+      // email validation
+      const email = document.querySelector("#email") as HTMLInputElement;
+      const errorEmail = document.querySelector("#error-email");
+      if (email && errorEmail) {
+        if (email.value === "") {
+          errorEmail.textContent = "Please input email.";
+          email.classList.add("error-box");
+          hasError = true;
+        } else if (!email.value.match(/.+@.+\..+/)) {
+          errorEmail.textContent = "Please check the email format.";
+          email.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorEmail.textContent = "";
+          email.classList.remove("error-box");
+        }
+      }
+
+      // service validation
+      const service = document.querySelector("#service") as HTMLSelectElement;
+      const errorService = document.querySelector("#error-service");
+      if (service && errorService) {
+        if (service.value === "") {
+          errorService.textContent = "Please select a service.";
+          service.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorService.textContent = "";
+          service.classList.remove("error-box");
+        }
+      }
+
+      // appointment date validation
+      const appointmentDate = document.querySelector("#appointment-date") as HTMLInputElement;
+      const errorAppointmentDate = document.querySelector("#error-appointment-date");
+      if (appointmentDate && errorAppointmentDate) {
+        if (appointmentDate.value === "") {
+          errorAppointmentDate.textContent = "Please select an appointment date.";
+          appointmentDate.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorAppointmentDate.textContent = "";
+          appointmentDate.classList.remove("error-box");
+        }
+      }
+
+      // message validation
+      const message = document.querySelector("#message") as HTMLInputElement;
+      const errorMessage = document.querySelector("#error-message");
+      if (message && errorMessage) {
+        if (message.value === "") {
+          errorMessage.textContent = "Please input message.";
+          message.classList.add("error-box");
+          hasError = true;
+        } else if (message.value.length > 250) {
+          errorMessage.textContent = "Message must be less than 250 characters.";
+          message.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorMessage.textContent = "";
+          message.classList.remove("error-box");
+        }
+      }
+
+      // agreement validation
+      const agreement = document.querySelector("#agreement") as HTMLInputElement;
+      const errorAgreement = document.querySelector("#error-agreement");
+      if (agreement && errorAgreement) {
+        if (!agreement.checked) {
+          errorAgreement.textContent = "Please check the agreement.";
+          agreement.classList.add("error-box");
+          hasError = true;
+        } else {
+          errorAgreement.textContent = "";
+          agreement.classList.remove("error-box");
+        }
+      }
+
+      if (!hasError) {
+        event.preventDefault();
+        const form = event.target as HTMLFormElement;
+        const formData: FormData = {
+          firstName: (document.querySelector("#first-name") as HTMLInputElement)?.value || "",
+          lastName: (document.querySelector("#last-name") as HTMLInputElement)?.value || "",
+          phoneNumber: (document.querySelector("#phone-number") as HTMLInputElement)?.value || "",
+          email: (document.querySelector("#email") as HTMLInputElement)?.value || "",
+          service: (document.querySelector("#service") as HTMLSelectElement)?.value || "",
+          appointmentDate: (document.querySelector("#appointment-date") as HTMLInputElement)?.value || "",
+          message: (document.querySelector("#message") as HTMLTextAreaElement)?.value || "",
+          agreement: (document.querySelector("#agreement") as HTMLInputElement)?.checked || false,
+        };
+
+        const formDataRecord: Record<string, unknown> = { ...formData };
+
+        emailjs
+          .send(EMAIL.SERVICE_ID, EMAIL.TEMPLATE_ID, formDataRecord)
+          .then((result) => {
+            form.reset();
+            notyf.success("Form submitted successfully!");
+            console.log(result.text);
+          })
+          .catch((error) => {
+            notyf.error("Failed to submit the form.");
+            console.error(error.text);
+          });
+      } else {
+        notyf.error("Please fix the errors in the form.");
+      }
+    });
+  }
+</script>
