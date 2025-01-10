@@ -1,7 +1,22 @@
 ---
 import { Image } from "astro:assets";
-import WebFlow from "../assets/icons/webflow.svg";
-import ChevronRight from "../assets/icons/chevron-right.svg";
+import WebFlow from "../../assets/icons/webflow.svg";
+import ChevronRight from "../../assets/icons/chevron-right.svg";
+
+export interface TestimonialProps {
+  mainLogo: string;
+  content: string;
+  user: {
+    name: string;
+    position: string;
+    avatar: string;
+  };
+  link: string;
+}
+
+interface Props extends TestimonialProps {}
+
+const { content, user } = Astro.props;
 ---
 
 <div class="testimonial">
@@ -9,19 +24,16 @@ import ChevronRight from "../assets/icons/chevron-right.svg";
     <Image src={WebFlow} alt={""} />
   </div>
   <div class="testimonial-content">
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
-    enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."
+    "{content}"
   </div>
   <div class="testimonial-main">
     <div class="media">
       <div class="media-img">
-        <img
-          src="https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp"
-        />
+        <img src={user.avatar} />
       </div>
       <div class="media-content">
-        <div class="media-title">Name Surname</div>
-        <div class="media-text">Position, Company name</div>
+        <div class="media-title">{user.name}</div>
+        <div class="media-text">{user.position}</div>
       </div>
     </div>
   </div>
@@ -43,9 +55,6 @@ import ChevronRight from "../assets/icons/chevron-right.svg";
     height: 100%;
     text-align: left;
     padding: 1.5rem 2rem 2rem;
-  }
-  .testimonial-logo {
-    /* margin-bottom: 1.5rem; */
   }
 
   .testimonial-content {
