@@ -4,6 +4,7 @@ import Container from "./Container.astro";
 import logo from "../assets/ddsgnr_logo.svg";
 // import Social from "./Social.astro";
 import "../styles/global.css";
+import Social from "./Social.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -24,8 +25,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </nav>
       <div class="footer-social">
-        <!-- <Social dribbble={false} /> -->
-        Icons
+        <Social dribbble={false} />
       </div>
     </div>
     <hr class="footer-hr" />

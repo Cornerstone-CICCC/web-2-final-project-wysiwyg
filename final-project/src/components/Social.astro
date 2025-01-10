@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import facebookIcon from "../assets/icons/ic_facebook.svg";
+import instaIcon from "../assets/icons/ic_insta.svg";
+import linkedinIcon from "../assets/icons/ic_linkedin.svg";
+import twitterIcon from "../assets/icons/ic_twitter.svg";
+import dribbbleIcon from "../assets/icons/ic_dribbble.svg";
+
+interface Props {
+  facebook?: boolean;
+  instagram?: boolean;
+  linkedIn?: boolean;
+  twitter?: boolean;
+  dribbble?: boolean;
+}
+
+const { facebook, instagram, linkedIn, twitter, dribbble } = Astro.props;
+---
+
+<ul class="social-icons">
+  {
+    facebook !== false ? (
+      <li>
+        <a href="#">
+          <Image src={facebookIcon} alt="Facebook" />
+        </a>
+      </li>
+    ) : null
+  }
+  {
+    instagram !== false ? (
+      <li>
+        <a href="#">
+          <Image src={instaIcon} alt="Instagram" />
+        </a>
+      </li>
+    ) : null
+  }
+  {
+    linkedIn !== false ? (
+      <li>
+        <a href="#">
+          <Image src={linkedinIcon} alt="LinkedIn" />
+        </a>
+      </li>
+    ) : null
+  }
+  {
+    twitter !== false ? (
+      <li>
+        <a href="#">
+          <Image src={twitterIcon} alt="Twitter/X" />
+        </a>
+      </li>
+    ) : null
+  }
+  {
+    dribbble !== false ? (
+      <li>
+        <a href="#">
+          <Image src={dribbbleIcon} alt="Dribbble" />
+        </a>
+      </li>
+    ) : null
+  }
+</ul>
+
+<style>
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .social-icons li {
+    list-style: none;
+  }
+</style>
