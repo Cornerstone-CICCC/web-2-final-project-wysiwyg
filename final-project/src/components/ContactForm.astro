@@ -1,5 +1,5 @@
 ---
-import CarImg from "../../assets/img/contact_form_img.png";
+import CarImg from "../assets/img/contact_form_img.png";
 ---
 
 <div class="contact-form-container">
@@ -236,14 +236,12 @@ import CarImg from "../../assets/img/contact_form_img.png";
     agreement: boolean;
   }
 
-  // Daz's emailjs account info
   const EMAIL = {
     PUBLIC_KEY: "Pje4_CaDdmEL3bbnu",
     SERVICE_ID: "service_a7x8nl7",
     TEMPLATE_ID: "template_p00wd35",
   };
 
-  // Initialize EmailJS with the public key
   emailjs.init(EMAIL.PUBLIC_KEY);
 
   const contactForm = document.querySelector("#contact-form");
@@ -360,6 +358,7 @@ import CarImg from "../../assets/img/contact_form_img.png";
         }
       }
 
+      // message validation
       const message = document.querySelector("#message") as HTMLInputElement;
       const errorMessage = document.querySelector("#error-message");
       if (message && errorMessage) {
