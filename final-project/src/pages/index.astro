@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import ContactForm from "../components/Home/ContactForm.astro";
 import ContactUs from "../components/Home/ContactUs.astro";
 import "../styles/global.css";
 
@@ -9,6 +10,11 @@ import "../styles/global.css";
 ---
 
 <Layout>
+  <section class="bg-gray">
+    <Container class="container">
+      <ContactForm />
+    </Container>
+  </section>
   <Container>
     <ContactUs />
   </Container>
