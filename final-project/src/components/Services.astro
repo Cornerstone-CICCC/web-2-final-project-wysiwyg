@@ -4,12 +4,12 @@
         <p class="serives-desc text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
     <div class="services-images">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
-        <img src="/src/assets/services/wheel.png" alt="wheel">
+        <div><img id="eng-serv1" src="/src/assets/services/eng_serv1.png" alt="eng-serv1"><p class="text-m">Engine Services</p></div>
+        <div><img id="ac" src="/src/assets/services/ac_mngmt.png" alt="ac"><p class="text-m">Air Conditioning</p></div>
+        <div><img id="eng-serv2" src="/src/assets/services/eng_serv2.png" alt="eng-serv2"><p class="text-m">Engine Services</p></div>
+        <div><img id="eng-mngmt" src="/src/assets/services/ac_mngmt.png" alt="eng-mngmt"><p class="text-m">Engine Management</p></div>
+        <div><img id="steering" src="/src/assets/services/steering.png" alt="steering"><p class="text-m">Steering</p></div>
+        <div><img id="wheel" src="/src/assets/services/wheel.png" alt="wheel"><p class="text-m">Wheel</p></div>
     </div>
     <button class="services-more a-btn">View more</button>
 </div>
@@ -40,10 +40,28 @@
         justify-items: center;
     }
 
+    .services-images div {
+        display: flex;
+        position: relative;
+    }
+
     .services-images img {
         width: 100%;
         max-width: 362px;
         border-radius: 5px;
+    }
+
+    .services-images p {
+        position: absolute;
+        bottom: 0;
+        padding-left: 1rem;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        color: #FFFFFF;
+    }
+
+    .services-images img:nth-child(n+4) {
+        display: none;
     }
 
     button {
@@ -59,6 +77,10 @@
         .services-images {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services-images img:nth-child(n+4) {
+            display: block;
         }
         
         .our-services {
