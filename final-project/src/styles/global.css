@@ -1,5 +1,4 @@
 @import url("./fonts.css");
-
 html,
 body {
   margin: 0;
@@ -63,6 +62,18 @@ body {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.68rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.chevron-right {
+  display: flex;
+  place-content: center;
+  width: 16px;
+  height: 16px;
 }
 
 @media only screen and (max-width: 768px) {

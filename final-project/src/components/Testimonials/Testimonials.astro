@@ -1,0 +1,25 @@
+---
+import Slider from "./Slider.astro";
+---
+
+<div class="testimonials">
+  <div class="testimonials-title">
+    <h2 class="text-xl">Customer testimonials</h2>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="testimonials-slider">
+    <Slider />
+  </div>
+</div>
+
+<style>
+  .testimonials-slider {
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .testimonials-title {
+      text-align: center;
+    }
+  }
+</style>
