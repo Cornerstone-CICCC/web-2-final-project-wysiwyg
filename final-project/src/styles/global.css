@@ -43,6 +43,7 @@ body {
 
 .a-btn {
   text-decoration: none;
+  text-wrap: balance;
   color: black;
   font-weight: 400;
   font-size: 1rem;

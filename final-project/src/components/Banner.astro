@@ -15,17 +15,36 @@ import bgImg from "../assets/img/banner.jpg";
 </section>
 
 <style>
-    * {
+    *:not(.a-btn, section) {
         margin: 0;
         padding: 0;
     }
     section {
         display: flex;
         align-items: center;
+        height: 900px;
+        max-height: 900px;
         background-size: cover;
         color: #ffffff;
-        min-height: 100vh;
-        padding: 0 64px;
+        position: relative;
+        overflow: hidden;
+        padding-inline: 1rem;
+    }
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+        ); 
+        z-index: 1; 
+        pointer-events: none; 
     }
     .banner-container {
         text-wrap: balance;
@@ -33,6 +52,7 @@ import bgImg from "../assets/img/banner.jpg";
         display: flex;
         flex-direction: column;
         gap: 24px;
+        z-index: 2;
         & a {
             max-width: fit-content;
             background-color: #ffffff;
@@ -40,7 +60,8 @@ import bgImg from "../assets/img/banner.jpg";
     }
     @media only screen and (max-width: 768px) {
         section {
-            padding: 0 24px;
+            height: 575px;
+            max-height: 575px;
         }
         .banner-container {
             width: 100%;

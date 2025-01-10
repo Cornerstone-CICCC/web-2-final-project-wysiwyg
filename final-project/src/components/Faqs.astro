@@ -68,7 +68,7 @@
             </details>
         </div>
         <div class="faqs-contact">
-            <h2 class="text-l">Still Have A Question</h2>
+            <h2 class="text-m">Still Have A Question</h2>
             <p class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
                 nihil?
@@ -79,7 +79,7 @@
 </section>
 
 <style>
-    * {
+    *:not(section, .a-btn) {
         margin: 0;
         padding: 0;
     }
@@ -87,7 +87,7 @@
     section {
         display: flex;
         justify-content: center;
-        padding: 80px 64px;
+        padding: 80px 0;
     }
 
     .faqs-container {
@@ -149,17 +149,21 @@
         align-items: center;
         gap: 24px;
         text-align: center;
+        width: 100%;
     }
 
     @media only screen and (max-width: 768px) {
         section {
-            padding: 48px 24px;
+            padding: 48px 0;
         }
         .faqs-title {
             align-items: flex-start;
             & p {
                 text-align: left;
             }
+        }
+        .a-btn {
+            width: 100%;
         }
     }
 </style>
