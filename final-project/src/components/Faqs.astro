@@ -1,0 +1,165 @@
+---
+
+---
+
+<section>
+    <div class="faqs-container text">
+        <div class="faqs-title">
+            <h2 class="text-xl">FAQs</h2>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique.
+            </p>
+        </div>
+        <div class="faqs">
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+            <details>
+                <summary class="text-s">Question text goes here</summary>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+                laboriosam eos incidunt quas id autem excepturi rerum aut, tenetur,
+                labore fugit maiores nisi dolore nostrum perferendis temporibus nulla
+                saepe ab corporis modi nemo. Maxime labore consectetur ex esse dicta.
+                Officiis dolorum laborum beatae quas alias assumenda dolore aliquid,
+                explicabo odio.
+            </details>
+        </div>
+        <div class="faqs-contact">
+            <h2 class="text-l">Still Have A Question</h2>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                nihil?
+            </p>
+            <a class="a-btn" href="#">Contact</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        padding: 80px 64px;
+    }
+
+    .faqs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        width: 768px;
+    }
+
+    .faqs-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        & p {
+            text-align: center;
+        }
+    }
+
+    .faqs {
+        width: 100%;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        & details {
+            border: 1px solid black;
+            padding: 20px 24px;
+        }
+    }
+
+    details summary {
+        list-style-type: none;
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+    }
+
+    details summary::before {
+        content: "+";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    details[open] summary::before {
+        content: "-";
+    }
+
+    .faqs-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+        section {
+            padding: 48px 24px;
+        }
+        .faqs-title {
+            align-items: flex-start;
+            & p {
+                text-align: left;
+            }
+        }
+    }
+</style>
