@@ -1,0 +1,73 @@
+---
+import Info from "./header/Info.astro"
+import Logo from "./header/Logo.astro"
+import Menu from "./header/Menu.astro"
+import Hamburger from "./header/Hamburger.astro"
+---
+
+<header>
+  <div class="desktop-menu">
+    <div class="header-info">
+      <Info />
+    </div>
+    <div class="header-nav">
+      <div class="header-logo">
+        <Logo />
+      </div>
+        <div class="header-menu">
+        <Menu />
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <Hamburger />
+  </div>
+</header>
+
+<style>
+    header {
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+    .desktop-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .75rem 4rem;
+        border-bottom: solid 1px black;
+    }
+    .header-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        border-bottom: solid 1px black;
+        justify-content: space-between;
+        padding: .75rem 4rem;
+    }
+    .mobile-menu {
+        display: none;
+    }
+
+    @media (max-width: 850px) {
+     .desktop-menu {
+        display: none;
+     }   
+
+     .mobile-menu {
+        display: flex;
+        align-items: center;
+        border-bottom: solid 1px black;
+        justify-content: space-between;
+        padding: .75rem 5%;
+     }
+    }
+</style>
