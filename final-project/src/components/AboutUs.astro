@@ -1,0 +1,201 @@
+---
+import { Image } from "astro:assets";
+import video from "../assets/img/video.jpg";
+---
+
+<section>
+    <div class="about-container">
+        <h2 class="text-l">About Us</h2>
+        <ul class="about-content">
+            <li>
+                <h3 class="text-m">Our Mission</h3>
+                <p class="text">
+                    At Ddsgnr Auto Repair, our mission is to provide our
+                    customers with the highest level of car care and customer
+                    service.
+                </p>
+            </li>
+            <li>
+                <h3 class="text-m">Our Expertise</h3>
+                <p class="text">
+                    At Ddsgnr Auto Repair, our mission is to provide our
+                    customers with the highest level of car care and customer
+                    service.
+                </p>
+            </li>
+            <li>
+                <h3 class="text-m">Our Equipment</h3>
+                <p class="text">
+                    At Ddsgnr Auto Repair, our mission is to provide our
+                    customers with the highest level of car care and customer
+                    service.
+                </p>
+            </li>
+            <li>
+                <h3 class="text-m">Our Customer Promise</h3>
+                <p class="text">
+                    At Ddsgnr Auto Repair, our mission is to provide our
+                    customers with the highest level of car care and customer
+                    service.
+                </p>
+            </li>
+        </ul>
+        <div class="about-links">
+            <a class="a-btn" href="#">Book Your Appointment Now</a>
+            <a class="a-btn" href="#">Learn More &#62;</a>
+        </div>
+    </div>
+    <Image src={video} alt={"Video Thumbnail"} class="thumbnail" />
+    <dialog>
+        <button autofocus>Close</button>
+        <p>This modal dialog has a groovy backdrop!</p>
+    </dialog>
+</section>
+
+<script>
+    const dialog = document.querySelector("dialog")
+    const showButton = document.querySelector(".thumbnail")
+    const closeButton = document.querySelector("dialog button")
+
+    showButton?.addEventListener("click", () => {
+        dialog?.showModal()
+    })
+
+    closeButton?.addEventListener("click", () => {
+        dialog?.close()
+    })
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    section {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        padding: 0 64px;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .about-container h2 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 57.6px;
+    }
+
+    .about-content {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .about-content li {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: calc(50% - 24px);
+        & h3 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+        & p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-wrap: balance;
+        }
+    }
+
+    .about-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        & a {
+            margin: 0;
+            padding: 0;
+            max-width: fit-content;
+            text-decoration: none;
+            color: black;
+        }
+        & a:first-of-type {
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        & a:last-of-type {
+            border: none;
+        }
+    }
+
+    .thumbnail {
+        width: 50%;
+        height: 500px;
+    }
+
+    dialog {
+        width: 60%;
+        max-width: 600px;
+        aspect-ratio: 16 / 9;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        padding: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+    }
+
+    dialog::backdrop {
+        background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+        ); 
+    }
+
+    .close-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+        z-index: 10;
+    }
+
+    @media only screen and (max-width: 768px) {
+        section {
+            flex-direction: column;
+            padding: 48px 24px;
+            gap: 48px;
+        }
+        .about-content {
+            flex-direction: column;
+            & li {
+                width: 100%;
+            }
+        }
+        .thumbnail {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    }
+</style>
