@@ -11,7 +11,7 @@ import logo7 from "../assets/img/logo7.png";
 <section>
     <p class="text">We work on</p>
     <h2 class="text-l">All Makes & Models</h2>
-    <h2 class="text-l">We work on all makes and models</h2>
+    <h2 class="text-l">We work on all makes & models</h2>
     <div class="brands">
         <img src={logo1.src} alt="" />
         <img src={logo2.src} alt="" />
@@ -31,7 +31,7 @@ import logo7 from "../assets/img/logo7.png";
 </section>
 
 <style>
-    * {
+    *:not(section, .a-btn) {
         margin: 0;
         padding: 0;
     }
@@ -41,7 +41,7 @@ import logo7 from "../assets/img/logo7.png";
         justify-content: center;
         align-items: center;
         gap: 24px;
-        padding: 80px 64px;
+        padding: 80px 0;
     }
     section h2:last-of-type {
         display: none;
@@ -63,7 +63,7 @@ import logo7 from "../assets/img/logo7.png";
 
     @media only screen and (max-width: 768px) {
         section {
-            padding: 48px 24px;
+            padding: 48px 0;
         }
         section p {
             display: none;
@@ -73,6 +73,8 @@ import logo7 from "../assets/img/logo7.png";
         }
         section h2:last-of-type {
             display: flex;
+            text-align: center;
+            text-wrap: pretty;
         }
         .brands {
             flex-direction: column;
@@ -81,7 +83,9 @@ import logo7 from "../assets/img/logo7.png";
             display: none;
         }
         .brands-btn {
-            display: flex;
+            display: block;
+            text-align: center;
+            width: 100%;
         }
     }
 </style>
