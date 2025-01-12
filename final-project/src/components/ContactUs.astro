@@ -1,0 +1,153 @@
+---
+import emailIcon from "../assets/icon/email.svg";
+import chatIcon from "../assets/icon/chat.svg";
+import phoneIcon from "../assets/icon/phone.svg";
+import locationIcon from "../assets/icon/location.svg";
+---
+
+<div class="contact-us-container">
+  <div class="title-container">
+    <h2 class="title roboto-bold">Contact Us</h2>
+    <p class="description roboto-regular">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </p>
+  </div>
+  <div class="contact-options-container">
+    <div class="contact-option">
+      <div class="contact-icon">
+        <img src={emailIcon.src} alt="Contact Icon" />
+      </div>
+      <div class="contact roboto-bold">Email</div>
+      <p class="contact-desc roboto-regular">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in ero.
+      </p>
+      <address>
+        <a href="mailto:hello@Ddsgnr.io" class="roboto-regular"
+          >hello@Ddsgnr.io</a
+        >
+      </address>
+    </div>
+    <div class="contact-option">
+      <div class="contact-icon">
+        <img src={chatIcon.src} alt="Contact Icon" />
+      </div>
+      <div class="contact roboto-bold">Live chat</div>
+      <p class="contact-desc roboto-regular">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in ero.
+      </p>
+      <address>
+        <a href="" class="roboto-regular">Start new chat</a>
+      </address>
+    </div>
+    <div class="contact-option">
+      <div class="contact-icon">
+        <img src={phoneIcon.src} alt="Contact Icon" />
+      </div>
+      <div class="contact roboto-bold">Phone</div>
+      <p class="contact-desc roboto-regular">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in ero.
+      </p>
+      <address>
+        <a href="" class="roboto-regular">+1 (555) 000-0000</a>
+      </address>
+    </div>
+    <div class="contact-option">
+      <div class="contact-icon">
+        <img src={locationIcon.src} alt="Contact Icon" />
+      </div>
+      <div class="contact roboto-bold">Office</div>
+      <p class="contact-desc roboto-regular">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in ero.
+      </p>
+      <address>
+        <a href="" class="roboto-regular">123 Sample St, Sydney NSW 2000 AU</a>
+      </address>
+    </div>
+  </div>
+</div>
+
+<style>
+  .contact-us-container {
+    height: 663px;
+    margin: 100px 0;
+  }
+  .title-container {
+    margin-bottom: 70px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .contact-options-container {
+    display: flex;
+  }
+
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .contact {
+    font-size: 32px;
+  }
+
+  .contact-desc {
+    font-size: 16px;
+  }
+
+  address a {
+    color: black;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-us-container {
+      height: 1136px;
+    }
+
+    .title-container {
+      text-align: left;
+    }
+
+    .title {
+      font-size: 32px;
+    }
+
+    .contact-options-container {
+      display: block;
+    }
+
+    .contact-option {
+      margin-bottom: 30px;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon img {
+      width: 27px;
+      height: 27px;
+    }
+
+    .contact {
+      font-size: 20px;
+    }
+  }
+</style>
