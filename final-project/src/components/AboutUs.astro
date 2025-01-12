@@ -64,7 +64,6 @@ import video from "../assets/img/video.jpg";
     })
 
     document.addEventListener('click', (e) => {
-        console.log(e)
         if (e.target == dialog) {
             dialog?.close()            
         }
@@ -147,6 +146,7 @@ import video from "../assets/img/video.jpg";
     .thumbnail {
         width: 50%;
         height: 500px;
+        object-fit: cover;
     }
 
     dialog {
@@ -201,7 +201,6 @@ import video from "../assets/img/video.jpg";
         .thumbnail {
             width: 100%;
             height: auto;
-            aspect-ratio: 1/1;
             object-fit: cover;
         }
     }
