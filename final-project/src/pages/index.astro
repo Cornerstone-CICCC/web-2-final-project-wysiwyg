@@ -1,8 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../components/Layout/Section.astro";
 import Container from "../components/Container.astro";
+import Banner from "../components/Banner.astro";
 import ContactForm from "../components/ContactForm.astro";
-import "../styles/global.css";
+import AboutUs from "../components/AboutUs.astro";
+import Mission from "../components/Mission.astro";
+import Logos from "../components/Logos.astro";
+import Services from "../components/Services.astro";
+import ContactUs from "../components/ContactUs.astro";
+import Team from "../components/team/Team.astro";
+import Testimonials from "../components/Testimonials/Testimonials.astro";
+import Faqs from "../components/Faqs.astro";
+import Schedule from "../components/Schedule.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,9 +22,57 @@ import "../styles/global.css";
   title="Home"
   description="Get Back on the Road Quickly with Ddsgnr, Expert Car Care You Can Trust,Expert Car Care You Can Trust"
 >
-  <section class="bg-gray">
-    <Container class="container">
-      <ContactForm />
+  <section class="bg-black">
+    <Container>
+      <Banner />
     </Container>
   </section>
+  <Section>
+    <Container>
+      <AboutUs />
+    </Container>
+  </Section>
+  <Section gray>
+    <Container>
+      <Mission />
+    </Container>
+  </Section>
+  <Section sm>
+    <Container>
+      <Logos />
+    </Container>
+  </Section>
+  <Section gray>
+    <Container>
+      <Services />
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <ContactUs />
+    </Container>
+  </Section>
+  <Section gray>
+    <Container>
+      <ContactForm />
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <Team />
+    </Container>
+  </Section>
+  <Section gray>
+    <Container>
+      <Testimonials />
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <Faqs />
+    </Container>
+  </Section>
+  <Section gray>
+    <Schedule />
+  </Section>
 </Layout>
