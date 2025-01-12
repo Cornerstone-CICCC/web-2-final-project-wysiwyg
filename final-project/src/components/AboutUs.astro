@@ -45,33 +45,35 @@ import video from "../assets/img/video.jpg";
             <a class="a-btn" href="#">Learn More &#62;</a>
         </div>
     </div>
-    <Image src={video} alt={"Video Thumbnail"} class="thumbnail" />
+    <div class="thumbnail">
+        <Image src={video} alt={"Video Thumbnail"} class="video-image" />
+    </div>
     <dialog>
         <video controls width="100%" height="100%">
-            <source src="/video/dummy.mp4" type="video/mp4">
+            <source src="/video/dummy.mp4" type="video/mp4" />
         </video>
         <button>Close</button>
     </dialog>
 </section>
 
 <script>
-    const dialog = document.querySelector("dialog")
-    const showButton = document.querySelector(".thumbnail")
-    const closeButton = document.querySelector("dialog button")
+    const dialog = document.querySelector("dialog");
+    const showButton = document.querySelector(".thumbnail");
+    const closeButton = document.querySelector("dialog button");
 
     showButton?.addEventListener("click", () => {
-        dialog?.showModal()
-    })
+        dialog?.showModal();
+    });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
         if (e.target == dialog) {
-            dialog?.close()            
+            dialog?.close();
         }
-    })
+    });
 
     closeButton?.addEventListener("click", () => {
-        dialog?.close()
-    })
+        dialog?.close();
+    });
 </script>
 
 <style>
@@ -79,7 +81,7 @@ import video from "../assets/img/video.jpg";
         margin: 0;
         padding: 0;
     }
-    
+
     section {
         display: flex;
         align-items: center;
@@ -90,6 +92,7 @@ import video from "../assets/img/video.jpg";
         display: flex;
         flex-direction: column;
         gap: 32px;
+        flex: 1;
     }
 
     .about-container h2 {
@@ -144,9 +147,48 @@ import video from "../assets/img/video.jpg";
     }
 
     .thumbnail {
-        width: 50%;
+        flex: 1;
+        max-width: 616px;
         height: 500px;
         object-fit: cover;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .thumbnail::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 15px solid black;
+        z-index: 2;
+    }
+
+    .thumbnail::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -50%);
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .video-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     dialog {
@@ -166,12 +208,7 @@ import video from "../assets/img/video.jpg";
     }
 
     dialog::backdrop {
-        background-color: rgba(
-            0,
-            0,
-            0,
-            0.5
-        ); 
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .close-button {
@@ -199,6 +236,7 @@ import video from "../assets/img/video.jpg";
             }
         }
         .thumbnail {
+            max-width: 100%;
             width: 100%;
             height: auto;
             object-fit: cover;
