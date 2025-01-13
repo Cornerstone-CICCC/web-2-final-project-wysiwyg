@@ -17,6 +17,7 @@
     "swiper": "^11.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^6.0.0"
+    "@vitejs/plugin-legacy": "^6.0.0",
+    "prettier": "3.4.2"
   }
 }
