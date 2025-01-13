@@ -1,44 +1,47 @@
 ---
-import Social from "../Social.astro"
+import Social from "../Social.astro";
 ---
 
-<div class="header-info-place text">
-    <div class="header-info-place-emergency text-s">For emergency cases: <u>800 123 45 67</u></div>
-    <div class="header-info-place-location">Location: 121 Wallstreet Street, NY , USA</div>
-    <div class="header-info-place-hours">Open hours: 9.00-24.00 Mon-Sat</div>
-    <div class="header-info-place-mail">Email: info@Ddsgnr.com</div>
+<div class="header-info-place text-xs">
+  <div class="header-info-place-emergency text-xs">
+    For emergency cases: <u>800 123 45 67</u>
+  </div>
+  <div class="header-info-place-location">
+    Location: 121 Wallstreet Street, NY , USA
+  </div>
+  <div class="header-info-place-hours">Open hours: 9.00-24.00 Mon-Sat</div>
+  <div class="header-info-place-mail">Email: info@Ddsgnr.com</div>
 </div>
 <div class="header-info-socials">
-    <Social />
+  <Social />
 </div>
 
 <style>
+  .header-info-place {
+    display: flex;
+    text-align: center;
+  }
+  .header-info-place div {
+    padding: 0 1rem;
+    border-left: solid 1px black;
+  }
+  .header-info-place div.header-info-place-emergency {
+    padding-left: 0;
+    border: none;
+  }
+
+  .header-info-socials {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 850px) {
     .header-info-place {
-        display: flex;
-        text-align: center;
+      flex-direction: column;
+      gap: 0.5rem;
     }
     .header-info-place div {
-        padding: 0 1rem;
-        border-left: solid 1px black;
+      border: none;
     }
-    .header-info-place div.header-info-place-emergency {
-        padding-left: 0;
-        border: none;
-    }
-
-    .header-info-socials {
-        display: flex;
-        justify-content: center;
-    }
-
-    @media (max-width: 850px) {
-        .header-info-place {
-            flex-direction: column;
-            gap: .5rem;
-        }
-        .header-info-place div {
-            border: none;
-        }
-    }
-
+  }
 </style>

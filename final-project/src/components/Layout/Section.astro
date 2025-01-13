@@ -1,0 +1,22 @@
+---
+const { sm, gray } = Astro.props;
+---
+
+<section class={`${sm ? "section-sm" : "section"} ${gray ? "bg-gray" : ""}`}>
+  <slot />
+</section>
+
+<style>
+  .section {
+    padding: 3rem 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-sm {
+      padding: 5rem 0;
+    }
+    .section {
+      padding: 7rem 0;
+    }
+  }
+</style>

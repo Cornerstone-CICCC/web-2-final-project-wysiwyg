@@ -79,10 +79,7 @@ import CarImg from "../assets/img/contact_form_img.png";
 
 <style>
   .contact-form-container {
-    padding: 100px 0;
     display: flex;
-    height: 1062px;
-    background-color: #f0f0f0;
   }
 
   .contact-form-section {
@@ -253,7 +250,9 @@ import CarImg from "../assets/img/contact_form_img.png";
       let hasError = false;
 
       // first name validation
-      const firstName = document.querySelector("#first-name") as HTMLInputElement;
+      const firstName = document.querySelector(
+        "#first-name"
+      ) as HTMLInputElement;
       const errorFirstName = document.querySelector("#error-first-name");
       if (firstName && errorFirstName) {
         if (firstName.value === "") {
@@ -261,7 +260,8 @@ import CarImg from "../assets/img/contact_form_img.png";
           firstName.classList.add("error-box");
           hasError = true;
         } else if (firstName.value.length > 20) {
-          errorFirstName.textContent = "First name must be less than 20 characters.";
+          errorFirstName.textContent =
+            "First name must be less than 20 characters.";
           firstName.classList.add("error-box");
           hasError = true;
         } else {
@@ -279,7 +279,8 @@ import CarImg from "../assets/img/contact_form_img.png";
           lastName.classList.add("error-box");
           hasError = true;
         } else if (lastName.value.length > 20) {
-          errorLastName.textContent = "Last name must be less than 20 characters.";
+          errorLastName.textContent =
+            "Last name must be less than 20 characters.";
           lastName.classList.add("error-box");
           hasError = true;
         } else {
@@ -289,7 +290,9 @@ import CarImg from "../assets/img/contact_form_img.png";
       }
 
       // phone number validation
-      const phoneNumber = document.querySelector("#phone-number") as HTMLInputElement;
+      const phoneNumber = document.querySelector(
+        "#phone-number"
+      ) as HTMLInputElement;
       const errorPhoneNumber = document.querySelector("#error-phone-number");
       if (phoneNumber && errorPhoneNumber) {
         if (phoneNumber.value === "") {
@@ -297,14 +300,16 @@ import CarImg from "../assets/img/contact_form_img.png";
           phoneNumber.classList.add("error-box");
           hasError = true;
         } else if (!/^\d+$/.test(phoneNumber.value)) {
-          errorPhoneNumber.textContent = "Phone number must contain only digits.";
+          errorPhoneNumber.textContent =
+            "Phone number must contain only digits.";
           phoneNumber.classList.add("error-box");
           hasError = true;
         } else if (
           phoneNumber.value.length !== 10 &&
           phoneNumber.value.length !== 11
         ) {
-          errorPhoneNumber.textContent = "Phone number must be 10 or 11 digits.";
+          errorPhoneNumber.textContent =
+            "Phone number must be 10 or 11 digits.";
           phoneNumber.classList.add("error-box");
           hasError = true;
         } else {
@@ -346,11 +351,16 @@ import CarImg from "../assets/img/contact_form_img.png";
       }
 
       // appointment date validation
-      const appointmentDate = document.querySelector("#appointment-date") as HTMLInputElement;
-      const errorAppointmentDate = document.querySelector("#error-appointment-date");
+      const appointmentDate = document.querySelector(
+        "#appointment-date"
+      ) as HTMLInputElement;
+      const errorAppointmentDate = document.querySelector(
+        "#error-appointment-date"
+      );
       if (appointmentDate && errorAppointmentDate) {
         if (appointmentDate.value === "") {
-          errorAppointmentDate.textContent = "Please select an appointment date.";
+          errorAppointmentDate.textContent =
+            "Please select an appointment date.";
           appointmentDate.classList.add("error-box");
           hasError = true;
         } else {
@@ -368,7 +378,8 @@ import CarImg from "../assets/img/contact_form_img.png";
           message.classList.add("error-box");
           hasError = true;
         } else if (message.value.length > 250) {
-          errorMessage.textContent = "Message must be less than 250 characters.";
+          errorMessage.textContent =
+            "Message must be less than 250 characters.";
           message.classList.add("error-box");
           hasError = true;
         } else {
@@ -378,7 +389,9 @@ import CarImg from "../assets/img/contact_form_img.png";
       }
 
       // agreement validation
-      const agreement = document.querySelector("#agreement") as HTMLInputElement;
+      const agreement = document.querySelector(
+        "#agreement"
+      ) as HTMLInputElement;
       const errorAgreement = document.querySelector("#error-agreement");
       if (agreement && errorAgreement) {
         if (!agreement.checked) {
@@ -395,14 +408,29 @@ import CarImg from "../assets/img/contact_form_img.png";
         event.preventDefault();
         const form = event.target as HTMLFormElement;
         const formData: FormData = {
-          firstName: (document.querySelector("#first-name") as HTMLInputElement)?.value || "",
-          lastName: (document.querySelector("#last-name") as HTMLInputElement)?.value || "",
-          phoneNumber: (document.querySelector("#phone-number") as HTMLInputElement)?.value || "",
-          email: (document.querySelector("#email") as HTMLInputElement)?.value || "",
-          service: (document.querySelector("#service") as HTMLSelectElement)?.value || "",
-          appointmentDate: (document.querySelector("#appointment-date") as HTMLInputElement)?.value || "",
-          message: (document.querySelector("#message") as HTMLTextAreaElement)?.value || "",
-          agreement: (document.querySelector("#agreement") as HTMLInputElement)?.checked || false,
+          firstName:
+            (document.querySelector("#first-name") as HTMLInputElement)
+              ?.value || "",
+          lastName:
+            (document.querySelector("#last-name") as HTMLInputElement)?.value ||
+            "",
+          phoneNumber:
+            (document.querySelector("#phone-number") as HTMLInputElement)
+              ?.value || "",
+          email:
+            (document.querySelector("#email") as HTMLInputElement)?.value || "",
+          service:
+            (document.querySelector("#service") as HTMLSelectElement)?.value ||
+            "",
+          appointmentDate:
+            (document.querySelector("#appointment-date") as HTMLInputElement)
+              ?.value || "",
+          message:
+            (document.querySelector("#message") as HTMLTextAreaElement)
+              ?.value || "",
+          agreement:
+            (document.querySelector("#agreement") as HTMLInputElement)
+              ?.checked || false,
         };
 
         const formDataRecord: Record<string, unknown> = { ...formData };

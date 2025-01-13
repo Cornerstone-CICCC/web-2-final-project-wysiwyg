@@ -20,8 +20,12 @@ body {
   max-width: 1312px;
 }
 
+.bg-black {
+  background-color: #000000;
+}
+
 .bg-gray {
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
 }
 
 p {
@@ -73,6 +77,10 @@ hr {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.68rem;
+}
+
+.text-xs {
+  font-size: 0.875rem;
 }
 
 h2 {
