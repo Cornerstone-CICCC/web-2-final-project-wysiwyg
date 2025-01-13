@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Layout/Section.astro";
+import Container from "../components/Container.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Mission from "../components/Mission.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+  title="Home"
+  description="Get Back on the Road Quickly with Ddsgnr, Expert Car Care You Can Trust,Expert Car Care You Can Trust"
+>
+  <Section>
+    <Container>
+      <AboutUs />
+    </Container>
+  </Section>
+  <div class="mission">
+    <Section gray>
+      <Container>
+        <Mission />
+      </Container>
+    </Section>
+  </div>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .mission {
+      display: none;
+    }
+  }
+</style>

@@ -1,8 +1,10 @@
 ---
 import bgImg from "../assets/img/banner.jpg";
+import Container from "./Container.astro";
 ---
 
 <section style=`background-image: url(${bgImg.src});`>
+    <Container>
     <div class="banner-container">
         <h2 class="text-xl">Expert Car Care You Can Trust</h2>
         <p class="text">
@@ -10,8 +12,9 @@ import bgImg from "../assets/img/banner.jpg";
             Trust,Expert Car Care You Can TrustExpert Car Care You Can
             TrustExpert Car Care You Can TrustExpert Car Care You Can Trust
         </p>
-        <a href="#" class="a-btn">Book Your Appointment Now</a>
+        <a href="/contact" class="a-btn">Book Your Appointment Now</a>
     </div>
+    </Container>
 </section>
 
 <style>
@@ -43,7 +46,7 @@ import bgImg from "../assets/img/banner.jpg";
             0,
             0.5
         ); 
-        z-index: 1; 
+        z-index: 10; 
         pointer-events: none; 
     }
     .banner-container {
@@ -52,7 +55,8 @@ import bgImg from "../assets/img/banner.jpg";
         display: flex;
         flex-direction: column;
         gap: 24px;
-        z-index: 2;
+        position: relative;
+        z-index: 11;
         & a {
             max-width: fit-content;
             background-color: #ffffff;

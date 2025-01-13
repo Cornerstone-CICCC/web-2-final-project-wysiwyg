@@ -1,5 +1,32 @@
 ---
 import Social from "../Social.astro";
+
+const profiles = [
+  {
+    src: "/src/assets/team/member1.png",
+    alt: "Team Member 1",
+    name: "Full name",
+    job: "Job title",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+  {
+    src: "/src/assets/team/member2.png",
+    alt: "Team Member 2",
+    name: "Full name",
+    job: "Job title",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+  {
+    src: "/src/assets/team/member3.png",
+    alt: "Team Member 3",
+    name: "Full name",
+    job: "Job title",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+];
 ---
 
 <div class="team">
@@ -11,54 +38,27 @@ import Social from "../Social.astro";
     </div>
   </div>
   <div class="teammates">
-    <div class="team-member">
-      <div class="team-member-pic">
-        <img src="/src/assets/team/member1.png" alt="Team Member 1" />
-      </div>
-      <div class="team-member-info text">
-        <div class="name text-m">Full name</div>
-        <div class="job">Job title</div>
-        <div class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique.
+    {
+      profiles.map((profile) => {
+        return (
+          <div class="team-member">
+          <div class="team-member-pic">
+            <img src={profile.src} alt={profile.alt} />
+          </div>
+          <div class="team-member-info text">
+            <div class="name text-m">{profile.name}</div>
+            <div class="job">{profile.job}</div>
+            <div class="description">
+              {profile.description}
+            </div>
+          </div>
+          <div class="team-member-socials">
+            <Social facebook={false} instagram={false} />
+          </div>
         </div>
-      </div>
-      <div class="team-member-socials">
-        <Social />
-      </div>
-    </div>
-    <div class="team-member">
-      <div class="team-member-pic">
-        <img src="/src/assets/team/member2.png" alt="Team Member 2" />
-      </div>
-      <div class="team-member-info text">
-        <div class="name text-m">Full name</div>
-        <div class="job">Job title</div>
-        <div class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique.
-        </div>
-      </div>
-      <div class="team-member-socials">
-        <Social />
-      </div>
-    </div>
-    <div class="team-member">
-      <div class="team-member-pic">
-        <img src="/src/assets/team/member3.png" alt="Team Member 3" />
-      </div>
-      <div class="team-member-info text">
-        <div class="name text-m">Full name</div>
-        <div class="job">Job title</div>
-        <div class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique.
-        </div>
-      </div>
-      <div class="team-member-socials">
-        <Social />
-      </div>
-    </div>
+        )
+      })
+    }
   </div>
 </div>
 
