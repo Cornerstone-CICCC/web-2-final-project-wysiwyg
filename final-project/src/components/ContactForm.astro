@@ -85,6 +85,7 @@ import CarImg from "../assets/img/contact_form_img.png";
 
   .contact-form-section {
     flex-grow: 1;
+    min-width: 400px;
   }
 
   .tagline {
@@ -183,6 +184,9 @@ import CarImg from "../assets/img/contact_form_img.png";
   }
 
   @media (max-width: 768px) {
+    .contact-form-section {
+      min-width: auto;
+    }
     .contact-form-container {
       flex-direction: column;
       height: auto;
