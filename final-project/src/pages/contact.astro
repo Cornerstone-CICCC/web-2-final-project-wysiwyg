@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import ContactUs from "../components/ContactUs.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Section from "../components/Layout/Section.astro";
+import "../styles/global.css";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+  title="Contact us"
+  description="Contact us with the contact form"
+>
+  <Section>
+    <Container class="container">
+      <ContactUs />
+    </Container>
+  </Section>
+  <Section gray>
+    <Container class="container">
+      <ContactForm />
+    </Container>
+  </Section>
+</Layout>
