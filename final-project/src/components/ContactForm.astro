@@ -64,7 +64,7 @@ import CarImg from "../assets/img/contact_form_img.png";
       </div>
       <div class="form-agreement">
         <input type="checkbox" id="agreement" name="agreement" />
-        <p class="agreement">I accept the Terms</p>
+        <label class="agreement" for="agreement">I accept the Terms</label>
       </div>
       <div id="error-agreement" class="error-message"></div>
       <div class="form-item">
@@ -101,6 +101,9 @@ import CarImg from "../assets/img/contact_form_img.png";
     height: 48px;
     border-radius: 5px;
     border: solid 1px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    padding: 0 10px;
   }
 
   .error-box {
@@ -137,6 +140,7 @@ import CarImg from "../assets/img/contact_form_img.png";
     width: 100%;
     height: 180px;
     border-radius: 5px;
+    padding: 10px;
   }
 
   .label {
@@ -146,6 +150,7 @@ import CarImg from "../assets/img/contact_form_img.png";
 
   .form-agreement {
     display: flex;
+    margin-top: 15px;
   }
 
   .agreement {
