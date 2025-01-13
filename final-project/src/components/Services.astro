@@ -1,111 +1,149 @@
 <div class="our-services">
-    <div class="services-content">
-        <h2 class="services-title text-l">Our Services</h2>
-        <p class="serives-desc text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <div class="services-content">
+    <h2 class="services-title text-l">Our Services</h2>
+    <p class="serives-desc text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+  </div>
+  <div class="services-images">
+    <div>
+      <img
+        id="eng-serv1"
+        src="/src/assets/img/services/eng_serv1.png"
+        alt="eng-serv1"
+      /><p class="text-m">Engine Services</p>
     </div>
-    <div class="services-images">
-        <div><img id="eng-serv1" src="/src/assets/services/eng_serv1.png" alt="eng-serv1"><p class="text-m">Engine Services</p></div>
-        <div><img id="ac" src="/src/assets/services/ac_mngmt.png" alt="ac"><p class="text-m">Air Conditioning</p></div>
-        <div><img id="eng-serv2" src="/src/assets/services/eng_serv2.png" alt="eng-serv2"><p class="text-m">Engine Services</p></div>
-        <div><img id="eng-mngmt" src="/src/assets/services/ac_mngmt.png" alt="eng-mngmt"><p class="text-m">Engine Management</p></div>
-        <div><img id="steering" src="/src/assets/services/steering.png" alt="steering"><p class="text-m">Steering</p></div>
-        <div><img id="wheel" src="/src/assets/services/wheel.png" alt="wheel"><p class="text-m">Wheel</p></div>
+    <div>
+      <img id="ac" src="/src/assets/img/services/ac_mngmt.png" alt="ac" /><p
+        class="text-m"
+      >
+        Air Conditioning
+      </p>
     </div>
-    <button class="services-more a-btn">View more</button>
+    <div>
+      <img
+        id="eng-serv2"
+        src="/src/assets/img/services/eng_serv2.png"
+        alt="eng-serv2"
+      /><p class="text-m">Engine Services</p>
+    </div>
+    <div>
+      <img
+        id="eng-mngmt"
+        src="/src/assets/img/services/ac_mngmt.png"
+        alt="eng-mngmt"
+      /><p class="text-m">Engine Management</p>
+    </div>
+    <div>
+      <img
+        id="steering"
+        src="/src/assets/img/services/steering.png"
+        alt="steering"
+      /><p class="text-m">Steering</p>
+    </div>
+    <div>
+      <img id="wheel" src="/src/assets/img/services/wheel.png" alt="wheel" /><p
+        class="text-m"
+      >
+        Wheel
+      </p>
+    </div>
+  </div>
+  <button class="services-more a-btn">View more</button>
 </div>
 
 <style>
-    h2, p {margin: 0;}
+  h2,
+  p {
+    margin: 0;
+  }
+  .our-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    background-color: #f7f7f7;
+  }
+
+  .services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .services-images {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .services-images div {
+    display: flex;
+    position: relative;
+  }
+
+  .services-images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+  }
+
+  .services-images p {
+    position: absolute;
+    bottom: 0;
+    padding-left: 1rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    color: #ffffff;
+  }
+
+  .services-images div:nth-child(n + 4) {
+    display: none;
+  }
+
+  button {
+    width: 100%;
+    background-color: transparent;
+    transition: 0.15s ease-in-out;
+  }
+  button:hover {
+    background-color: rgb(200, 200, 200);
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .services-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-images div:nth-child(n + 4) {
+      display: block;
+    }
+
     .our-services {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
-        background-color: #F7F7F7;
-        padding: 3rem 1.5rem;
     }
 
     .services-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .services-images {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        justify-items: center;
-    }
-
-    .services-images div {
-        display: flex;
-        position: relative;
-    }
-
-    .services-images img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 5px;
-    }
-
-    .services-images p {
-        position: absolute;
-        bottom: 0;
-        padding-left: 1rem;
-        padding-bottom: 1.5rem;
-        width: 100%;
-        color: #FFFFFF;
-    }
-
-    .services-images div:nth-child(n+4) {
-        display: none;
+      text-align: center;
     }
 
     button {
-        width: 100%;
-        background-color: transparent;
-        transition: .15s ease-in-out;
+      display: none;
     }
-    button:hover {
-        background-color: rgb(200, 200, 200);
+  }
+
+  /* Large devices (laptops desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .services-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+      row-gap: 5rem;
+      max-width: 1180px;
     }
-    
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 768px) {
-        .services-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .services-images div:nth-child(n+4) {
-            display: block;
-        }
-        
-        .our-services {
-            padding: 7rem 4rem;
-        }
-
-        .services-content {
-            text-align: center;
-        }
-
-        button {
-            display: none;
-        }
-
-    }
-
-    /* Large devices (laptops desktops, 992px and up) */
-    @media only screen and (min-width: 992px) {
-        .services-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 2rem;
-            row-gap: 5rem;
-            max-width: 1180px;
-        }
-    }
+  }
 </style>
